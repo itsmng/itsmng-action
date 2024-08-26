@@ -52,9 +52,11 @@ jobs:
               working-directory: "/var/www/itsm-ng"
               run: |
                 if [ -f "composer.json" ]; then
+                    apt install -y composer
                     composer install --ansi --no-interaction --no-progress --prefer-dist
                 fi
                 if [ -f "package.json" ]; then
+                    apt install -y nodejs
                     npm install --no-save
                 fi
             
